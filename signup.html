@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Sign Up</h1>
+        </div>
+        <div class="signup-form">
+            <form method="post" action="{{ url_for('signup') }}">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Create Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+                </div>
+                <div class="form-group">
+                    <label for="current_location">Current Location</label>
+                    <input type="text" id="current_location" name="current_location" placeholder="Enter your current location" required>
+                </div>
+                <div class="form-group">
+                    <label for="car_name">Car Name</label>
+                    <input type="text" id="car_name" name="car_name" placeholder="Enter your car name" required>
+                </div>
+                <div class="form-group">
+                    <label for="connector_type">Connector Type</label>
+                    <select id="connector_type" name="connector_type" required>
+                        <option value="" disabled selected>Select connector type</option>
+                        <option value="Type 1">Type 1</option>
+                        <option value="Type 2">Type 2</option>
+                        <option value="CHAdeMO">CHAdeMO</option>
+                        <option value="CCS">CCS</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="battery_percentage">Battery Percentage</label>
+                    <input type="number" id="battery_percentage" name="battery_percentage" min="0" max="100" placeholder="Enter battery percentage" required>
+                </div>
+                <div class="form-group">
+                    <label for="mileage">Mileage of the Vehicle</label>
+                    <input type="number" id="mileage" name="mileage" min="0" placeholder="Enter mileage of the vehicle" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Sign Up">
+                </div>
+            </form>
+            <p>Already have an account? <a href="{{ url_for('login') }}">Log in here</a></p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2023 Your Company. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
